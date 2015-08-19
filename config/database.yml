@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: kingoflearn_dev
+  pool: 5
+  host: localhost
+  username: wayne
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: kingoflearn-test
+  pool: 5
+  host: localhost
+  username: wayne
+  password:
+  
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: kingoflearn-prod
+  pool: 5
+  host: localhost
+  username: wayne
+  password:
