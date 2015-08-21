@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: kingoflearn-test
+  database: kingoflearn_test
   pool: 5
   host: localhost
   username: wayne
@@ -19,7 +19,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: kingoflearn-prod
+  database: kingoflearn_prod
   pool: 5
   host: localhost
   username: wayne
