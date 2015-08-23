@@ -1,5 +1,4 @@
-require 'nokogiri'
-require 'mechanize' 
+require 'nokogiri' 
 require 'open-uri'
 
 
@@ -14,6 +13,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+    get_profile(@student.username)
   end
 
   def create
@@ -33,8 +33,13 @@ class StudentsController < ApplicationController
     params.require(:student).permit(:name, :username, :score)
   end
 
-  # Scraper
-  def search_learn
+  # Get data from learn per user
+  def get_profile(username)
+    doc = Nokogiri::HTML(open("https://learn.co/#{student}", 'Accept' => 'text/html'))
+    name = doc.css('.row.user-name span.h3.title').text
+    score = doc.css('div[data-track-id="1564"] .col-sm-3.lessons-complete-container h3').text.to_i
+    Student.create(name: name, username: username, score: score)
   end
-
 end
+
+
