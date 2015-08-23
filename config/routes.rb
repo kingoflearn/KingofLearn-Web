@@ -3,10 +3,8 @@ Rails.application.routes.draw do
 
   get 'students/show'
 
-  root 'learn_users#index'
-  get 'learn_users/index'
+  root 'students#index'
 
-  get 'learn_users/show'
 
   
 
