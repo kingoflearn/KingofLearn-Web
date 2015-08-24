@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
   # end
 
 
-  private #explain why these methods were made private
+  # private #explain why these methods were made private
 
   # Explain the params addition 
   # def student_params
@@ -43,10 +43,15 @@ class StudentsController < ApplicationController
   end
 
   def get_profile(username)
+    @students = Student.all 
     doc = Nokogiri::HTML(open("https://learn.co/#{username}", 'Accept' => 'text/html'))
     name = doc.css('.row.user-name span.h3.title').text
     score = doc.css('div[data-track-id="1564"] .col-sm-3.lessons-complete-container h3').text.to_i
-    Student.create(name: name, username: username, score: score)
+    
+    # not sure if creation should be done in this method.
+    @students.each do |stu|
+      stu.update_attributes(:name => name, :username => username, :score => score)
+    end
   end
 end
 
