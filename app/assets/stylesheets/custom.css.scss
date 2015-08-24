@@ -7,7 +7,7 @@
 /* --- header --- */
 
 body {
-  background-image: image-url("escheresque_ste.png");
+  background-image: image-url("diamond_upholstery.png");
   margin-top: 75px;
   /* Added padding is due to bootstrap note 
   regarding fixed top nav */
@@ -40,10 +40,23 @@ font-family: 'Chewy', cursive;
 	text-align: center;
 }
 
+#title {
+	color: orange;
+	margin-bottom: 20px;
+}
+
+.list-group-item {
+	font-size: 18px;
+	color: green;
+}
+
 /* --- sticky-footer ---- */
 
 footer {
 	width: 100%;
 	bottom: 0;
 	position: fixed;
-}
+	color: black;
+
+	}
+
