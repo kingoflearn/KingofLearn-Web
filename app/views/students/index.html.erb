@@ -1,18 +1,32 @@
-<div id="leaderboard">
+
+<div id="leaderboard" >
+
 	<h1 id="title">Leader Board</h1>
 
-	<% @students.reverse[0...8].each do |student| %>
-		<div class="list-group" id="index">
-		<% if @students.reverse[0] == student %>
-			<button type="button" class="list-group-item list-group-item-success active" ><%= student.name %>, <%= student.score %>
-		  	</button>
-		<% else %>
-			<button type="button" class="list-group-item list-group-item-success" ><%= student.name %>, <%= student.score %>
-		  	</button>
+	<div id="col1" class="col-md-6">
+		<% @students.reverse[0...8].each do |student| %>
+			<div class="list-group" id="index left-index">
+			<% if @students.reverse[0] == student %>
+				<button type="button" class="list-group-item list-group-item-success active" ><%= student.name %>, <%= student.score %>
+			  	</button>
+			<% else %>
+				<button type="button" class="list-group-item list-group-item-success" ><%= student.name %>, <%= student.score %>
+			  	</button>
+			<% end %>
+			</div>
 		<% end %>
-		</div>
-	<% end %>
+	</div>
 
-	<!-- <p><a class="btn btn-success btn-lg" href="#" role="button">Update</a></p> -->
+	<div id="vertical-border"> </div>
+
+	<div id="col2" class="col-md-6">
+		<% @students.reverse[9...17].each do |student| %>
+			<div class="list-group" id="index right-index">
+				<button type="button" class="list-group-item list-group-item-success" ><%= student.name %>, <%= student.score %>
+			  	</button>
+			</div>
+		<% end %>
+	</div>
+
+
 </div>
-

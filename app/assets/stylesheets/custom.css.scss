@@ -30,17 +30,26 @@ font-family: 'Chewy', cursive;
 }
 
 #leaderboard {
-	text-align: center;
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 1000px;
+	margin: 0 auto;
 }
+
+#col1 {
+	width: 500px;
+	margin: 0 auto;
+}
+
+#col2 {
+	width: 500px;
+	margin: 0 auto;
+	}
 
 #index button{
 	text-align: center;
 }
 
 #title {
+	text-align: center;
 	color: orange;
 	margin-bottom: 20px;
 }
@@ -49,6 +58,9 @@ font-family: 'Chewy', cursive;
 	font-size: 18px;
 	color: green;
 }
+
+
+
 
 /* --- sticky-footer ---- */
 
