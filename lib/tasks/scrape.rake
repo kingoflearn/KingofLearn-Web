@@ -4,5 +4,4 @@ namespace :scrape do
   	StudentsController.new.get_all_profiles
   	puts "Scrape completed"
   end
-
 end
