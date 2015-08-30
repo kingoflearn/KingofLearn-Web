@@ -51,7 +51,8 @@ font-family: 'Chewy', cursive;
 #title {
 	text-align: center;
 	color: orange;
-	margin-bottom: 20px;
+	margin-top: 0;
+	margin-bottom: 40px;
 }
 
 .list-group-item {
@@ -59,8 +60,9 @@ font-family: 'Chewy', cursive;
 	color: green;
 }
 
-
-
+button.list-group-item {
+	text-align: center;
+}
 
 /* --- sticky-footer ---- */
 
