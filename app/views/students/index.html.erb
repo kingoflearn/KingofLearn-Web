@@ -17,10 +17,8 @@
 		<% end %>
 	</div>
 
-	<div id="vertical-border"> </div>
-
 	<div id="col2" class="col-md-6">
-		<% @students.reverse[9...17].each do |student| %>
+		<% @students.reverse[8...16].each do |student| %>
 			<div class="list-group" id="index right-index">
 				<button type="button" class="list-group-item list-group-item-success" ><%= student.name %>, <%= student.score %>
 			  	</button>
