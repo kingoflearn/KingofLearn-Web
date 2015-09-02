@@ -14,7 +14,7 @@ class Student < ActiveRecord::Base
     name = doc.css('.row.user-name span.h3.title').text
     score = doc.css('div[data-track-id="1564"] .col-sm-3.lessons-complete-container h3').text.to_i 
 
-    Student.find_or_create_by(name: name, username: username, score: score) do |stu|
+    Student.find_or_create_by(name: name, username: username) do |stu|
     	stu.score = score
     end
   end
