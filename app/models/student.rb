@@ -14,10 +14,25 @@ class Student < ActiveRecord::Base
     doc = Nokogiri::HTML(open("https://learn.co/#{username}", 'Accept' => 'text/html'))
     name = doc.css('.row.user-name span.h3.title').text
     score = doc.css('div[data-track-id="1564"] .col-sm-3.lessons-complete-container h3').text.to_i 
+    usernames = []
 
-    Student.find_or_create_by(username: username) do |student|
-      student.update_attributes(:name => name, :score => score)
-    end    
+    Student.all.each do |stu|
+      usernames << stu.username
+    end
+
+    if usernames.include? username
+      Student.find_by(username: username).update(:name => name, :score => score)
+    else
+      Student.create(name: name, username: username, score: score)
+    end
   end
+
+    
+
+      #   Student.find_or_create_by(username: username) do |stu|
+      #     stu.update(:name => name, :score => score)
+      #     stu.update(:score => score)
+      #   end
+    
 
 end
