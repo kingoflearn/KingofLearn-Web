@@ -16,23 +16,8 @@ class Student < ActiveRecord::Base
     score = doc.css('div[data-track-id="1564"] .col-sm-3.lessons-complete-container h3').text.to_i 
 
     Student.find_or_create_by(username: username) do |student|
-      student.update(:name => name, :score => score)
+      student.update_attributes(:name => name, :score => score)
     end    
   end
-
-    
-
-      #   
-
-    #   Student.all.each do |stu|
-    #   usernames << stu.username
-    # end
-
-    # if usernames.include? username
-    #   Student.find_by(username: username).update(:name => name, :score => score)
-    # else
-    #   Student.create(name: name, username: username, score: score)
-    # end
-    
 
 end
